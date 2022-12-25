@@ -1,0 +1,4 @@
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", // this should be there
+    "dev": "nodemon index.js"
+},
