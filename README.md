@@ -41,7 +41,7 @@ However, and this is important to understand, we will *not* create a front end i
     ```
 - create a file "index.js"
 - create a file ".gitignore". In this file, write, at the top: `node_modules`. This will prevent the `node_modules` directory to be added to your git repo
-- push
+- push  
 - you're set!
 
 ## Step 2 - Create a simple express server
