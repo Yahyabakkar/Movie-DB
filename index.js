@@ -60,5 +60,17 @@ app.get("/movies/update", (req, res) => {});
 
 app.get("/movies/delete", (req, res) => {});
 
-
-
+app.get("/movies/read/:content", (req, res) => {
+  if (req.params.content == "by-date") {
+    res.status(200).send({ status: 200, data: movies.sort((a, b) => a.year - b.year) });
+  } else if (req.params.content == "by-rating") {
+    res.status(200).send({ status: 200, data: movies.sort((a, b) => b.rating - a.rating) });
+  } else if (req.params.content == "by-title") {
+    res.status(200).send({
+      status: 200,
+      data: movies.sort((a, b) =>
+        a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+      ),
+    });
+  }
+});
