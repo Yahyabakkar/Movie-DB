@@ -145,5 +145,20 @@ app.get("/movies/update/:ID", (req, res) => {
     res.status(200).send({ status: 200, data: movies });
   }
 });
+app.post('/movies/add',(req,res) =>{
+  let title = req.query.title;
+  let year = req.query.year;
+  let rating = req.query.rating;
+})
+app.delete('/movies/delete/:ID',(req,res)=>{
+  let indexID = req.params.ID
+  if(indexID >=0 && indexID < movies.length){
+    movies.splice(indexID,1)
+  }})
+  app.put('/movies/update/:ID',(req,res)=>{
+    let indexID = req.params.ID
+    let title = req.query.title
+    let year = req.query.year
+  })
 
 
