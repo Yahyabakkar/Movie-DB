@@ -29,3 +29,17 @@ app.get("/time", (req, res) => {
 });
 
 app.listen(port, console.log(`Connected to ${port}`));  
+
+
+
+app.get("/search", (req, res) => {
+  if (req.query.s) {
+    res.status(200).send({ status: 200, message: "ok", data: req.query.s });
+  } else {
+    res.status(500).send({
+      status: 500,
+      error: true,
+      message: "you have to provide a search",
+    });
+  }
+});
