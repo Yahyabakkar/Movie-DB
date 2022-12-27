@@ -74,3 +74,17 @@ app.get("/movies/read/:content", (req, res) => {
     });
   }
 });
+app.get("/movies/read/id/:ID", (req, res) => {
+  if (Number(req.params.ID) >= 0 && req.params.ID < movies.length) {
+    res.status(200).send({
+      status: 200,
+      data: movies[req.params.ID],
+    });
+  } else {
+    res.status(404).send({
+      status: 404,
+      error: true,
+      message: `the movie ${req.params.ID} does not exist`,
+    });
+  }
+});
