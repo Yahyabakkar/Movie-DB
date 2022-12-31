@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Yahyabakkar/Movie-DB.git"
@@ -19,5 +19,10 @@
   "homepage": "https://github.com/Yahyabakkar/Movie-DB#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "mongodb": "^2.2.16"
   }
 }

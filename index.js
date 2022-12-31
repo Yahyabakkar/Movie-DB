@@ -161,4 +161,24 @@ app.delete('/movies/delete/:ID',(req,res)=>{
     let year = req.query.year
   })
 
+  const crudRoutes = require('./routes/crudRoutes')
+  const oldRoutes = require('./routes/oldRoutes')
+  require('dotenv/config')
+  const mongoose = require('mongoose');
+  
+  
+  app.use(express.json());
+  app.use('/movies',crudRoutes)
+  app.use('/app',oldRoutes)
+
+  mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+    console.log("Successfully connected to MongoDB database!");
+});
+app.get('/',(req,res) =>{
+  console.log('Testing Server')
+  res.send('OK!')
+})
 

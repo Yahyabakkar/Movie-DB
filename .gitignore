@@ -1,1 +1,1 @@
-'node_modules'
+DB_CONNECTION=mongodb+srv://Yahya-2023:mongoDB2022@cluster0.wnutl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
